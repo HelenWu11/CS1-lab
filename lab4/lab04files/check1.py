@@ -1,0 +1,10 @@
+from PIL import Image
+imc = Image.open('ca.jpg')
+imh = Image.open('hk.jpg')
+im = Image.new('RGB',(512,512))
+im_ca = imc.resize((256,256))
+im_hk = imh.resize((256,256))
+im.paste(im_ca, (0,0))
+im.paste(im_hk, (256,0))
+im.save('two_by_two.jpg')
+im.show()
